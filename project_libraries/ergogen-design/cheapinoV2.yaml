@@ -1,0 +1,131 @@
+units:
+  # Proxy Spacing Variables
+  kx: u
+  ky: u
+  # Padding Variables
+  px: kx + 2
+  py: ky + 2
+points:
+  zones:
+    matrix:
+      anchor:
+        rotate: 0
+      columns:
+        pinky:
+        ring.key.stagger: 10.01
+        middle.key.stagger: 6.35
+        index.key.stagger: -6.35
+        inner.key.stagger: -2.54
+      rows:
+        bottom:
+        home:
+        top:
+    thumbs:
+      anchor:
+        ref: matrix_inner_bottom
+        shift: [-4.67, -22.45]
+      columns:
+        near:
+        home.key:
+          spread: 20.95
+          splay: -10
+          origin: [-0.5kx, -0.5ky]
+        far.key:
+          spread: 20.32
+          splay: -13
+          origin: [-0.5kx, -0.5ky]
+      rows:
+        thumb:
+  rotate: 0
+  mirror:
+    distance: 280
+outlines:
+  # Pure key outline
+  raw:
+    - what: rectangle
+      where: true
+      size: [px, py]
+      fillet: 2
+  # Key outlines with 0.5mm removed to show key overlaps
+  keys:
+    - what: rectangle
+      where: true
+      size: [kx-0.5,ky-0.5]
+  # Key plate outline
+  keyplate:
+    - what: polygon
+      operation: stack
+      points:
+       # start at the top left corner
+        - ref: matrix_pinky_top
+          shift: [-0.5kx,0.5ky]
+        - ref: matrix_pinky_top
+          shift: [0.5kx,0.5ky]
+        - ref: matrix_ring_top
+          shift: [-0.5kx,0.5ky]
+        - ref: matrix_ring_top
+          shift: [0.5kx,0.5ky]
+        - ref: matrix_middle_top
+          shift: [-0.5kx,0.5ky]
+        - ref: matrix_middle_top
+          shift: [0.5kx,0.5ky]
+        - ref: matrix_index_top
+          shift: [-0.5kx,0.5ky]
+        - ref: matrix_index_top
+          shift: [0.5kx,0.5ky]
+        - ref: matrix_inner_top
+          shift: [-0.5kx,0.5ky]
+        - ref: matrix_inner_top
+       # move down to bottom
+          shift: [0.5kx,0.5ky]
+        - ref: matrix_inner_bottom
+          shift: [0.5kx,-0.5ky]
+       # start of thumb block
+        - ref: thumbs_home_thumb
+          shift: [-0.5kx,0.5ky]
+        - ref: thumbs_home_thumb
+          shift: [0.5kx,0.5ky]
+        - ref: thumbs_far_thumb
+          shift: [-0.5kx,0.5ky]
+        - ref: thumbs_far_thumb
+          shift: [0.5kx,0.5ky]
+        - ref: thumbs_far_thumb
+          shift: [0.5kx,-0.5ky]
+        - ref: thumbs_far_thumb
+          shift: [-0.5kx,-0.5ky]
+        - ref: thumbs_far_thumb
+          shift: [-0.5kx,-0.5ky]
+        - ref: thumbs_home_thumb
+          shift: [0.5kx,-0.5ky]
+        - ref: thumbs_home_thumb
+          shift: [-0.5kx,-0.5ky]
+        - ref: thumbs_near_thumb
+          shift: [0.5kx,-0.5ky]
+        - ref: thumbs_near_thumb
+          shift: [-0.5kx,-0.5ky]
+        - ref: thumbs_near_thumb
+          shift: [-0.5kx,0.5ky]
+       # start of bottom row
+        - ref: matrix_inner_bottom
+          shift: [-4.67-0.5kx, 2.54-0.5ky]
+        - ref: matrix_index_bottom
+          shift: [-0.5kx,-0.5ky]
+        - ref: matrix_middle_bottom
+          shift: [0.5kx,-0.5ky]
+        - ref: matrix_middle_bottom
+          shift: [-0.5kx,-0.5ky]
+        - ref: matrix_ring_bottom
+          shift: [0.5kx,-0.5ky]
+        - ref: matrix_ring_bottom
+          shift: [-0.5kx,-0.5ky]
+        - ref: matrix_pinky_bottom
+          shift: [0.5kx,-0.5ky]
+        - ref: matrix_pinky_bottom
+          shift: [-0.5kx,-0.5ky]
+      fillet: 2
+  # Combination preview showing outline and keys
+  combo:
+    - name: keyplate
+    - operation: subtract
+      name: keys
+

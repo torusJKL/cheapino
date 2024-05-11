@@ -86,24 +86,16 @@ outlines:
           shift: [0.5px,0.5py]
        # move down to bottom
         - ref: matrix_inner_bottom
-          shift: [0.5px,-0.5py]
+          shift: [0.5px,-0.5py-p]
        # start of thumb block
         - ref: thumbs_home_thumb
-          shift: [-0.5kx+p,0.5py]
-        - ref: thumbs_home_thumb
-          shift: [0.5px,0.5py]
-        - ref: thumbs_far_thumb
-          shift: [-0.5px,0.5py]
+          shift: [0.5px+1.5p,0.5py]
         - ref: thumbs_far_thumb
           shift: [0.5px,0.5py]
         - ref: thumbs_far_thumb
           shift: [0.5px,-0.5py]
-        - ref: thumbs_far_thumb
-          shift: [-0.5kx,-0.5py]
         - ref: thumbs_home_thumb
-          shift: [0.5kx,-0.5py]
-        - ref: thumbs_home_thumb
-          shift: [-0.5kx,-0.5py]
+          shift: [0.5px-p,-0.5py]
         - ref: thumbs_near_thumb
           shift: [0.5kx,-0.5py]
         - ref: thumbs_near_thumb

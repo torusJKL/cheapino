@@ -48,10 +48,16 @@ outlines:
       size: [px, py]
       fillet: 2
   # Key outlines with 0.5mm removed to show key overlaps
-  keys:
+  keys_overlap:
     - what: rectangle
       where: true
       size: [kx-0.5,ky-0.5]
+  # Switch outline with 14mm x 14mm MX fitting
+  switches:
+    - what: rectangle
+      where: true
+      bound: false
+      size: [14, 14]
   # Key plate outline
   keyplate:
     - what: polygon
@@ -126,4 +132,12 @@ outlines:
   combo:
     - name: keyplate
     - operation: subtract
-      name: keys
+      name: switches
+cases:
+    switchplate:
+        - what: outline # outline | case
+          name: combo
+          extrude: 2 # default = 1
+          shift: [-60, -20, 0] # default = [0, 0, 0]
+          rotate: [0, 0, 0] # default = [0, 0, 0]
+          operation: add # | subtract | intersect

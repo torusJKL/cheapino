@@ -24,17 +24,17 @@ points:
     thumbs:
       anchor:
         ref: matrix_inner_bottom
-        shift: [-4.67, -22.45]
+        shift: [-4.67, -21.62]
       columns:
         near:
         home.key:
-          spread: 20.95
+          spread: 19.45
           splay: -10
-          origin: [-kx/2, -ky/2]
+          origin: [-0.5kx, -0.5ky]
         far.key:
-          spread: 20.32
+          spread: 19.07
           splay: -13
-          origin: [-kx/2, -ky/2]
+          origin: [-0.5kx, -0.5ky]
       rows:
         thumb:
   rotate: 0

@@ -6,6 +6,8 @@ units:
   p: 1
   px: kx + 2p
   py: ky + 2p
+# Mounting holes radius
+  mhs: 1.1
 points:
   zones:
     matrix:
@@ -136,6 +138,61 @@ outlines:
           shift: [0.25px,0.25py]
         - ref: matrix_inner_top
           shift: [0.25px,-0.25py]
+    # mounting holes
+    - what: circle
+      operation: subtract
+      radius: mhs
+      where:
+      - ref: matrix_pinky_top
+        shift: [8.9332,-9.5263]
+    - what: circle
+      operation: subtract
+      radius: mhs
+      where:
+      - ref: matrix_pinky_top
+        shift: [8.9591,-28.6861]
+    - what: circle
+      operation: subtract
+      radius: mhs
+      where:
+        - ref: matrix_ring_top
+          shift: [8.8017,-9.4078]
+    - what: circle
+      operation: subtract
+      radius: mhs
+      where:
+        - ref: matrix_middle_top
+          shift: [9.0132,-9.4291]
+    - what: circle
+      operation: subtract
+      radius: mhs
+      where:
+        - ref: matrix_index_home
+          shift: [10.0707,-11.988]
+    - what: circle
+      operation: subtract
+      radius: mhs
+      where:
+      - ref: matrix_inner_top
+        shift: [8.9154,-8.763]
+    - what: circle
+      operation: subtract
+      radius: mhs
+      where:
+      - ref: thumbs_near_thumb
+        shift: [4.445,10.795]
+    - what: circle
+      operation: subtract
+      radius: mhs
+      where:
+      - ref: thumbs_near_thumb
+        shift: [31.877,6.223]
+    - what: circle
+      operation: subtract
+      radius: mhs
+      where:
+      - ref: thumbs_near_thumb
+        shift: [28.829,-10.033]
   # Combination preview showing outline and keys
   combo:
     - name: keyplate

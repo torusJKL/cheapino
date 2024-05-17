@@ -194,7 +194,7 @@ outlines:
         shift: [28.829,-10.533]
 
   # pcb side outline (areas of micro controller & RJ45)
-  pcb-side:
+  pcbside:
     # first round with large fillet
     - what: polygon
       operation: stack
@@ -296,10 +296,10 @@ outlines:
       name: switches
 
   # Combine keyplate pcb-side part
-  pcb-combo:
+  pcbcombo:
     - name: keyplate
     - operation: add
-      name: pcb-side
+      name: pcbside
 
 #3D printable
 cases:
@@ -310,3 +310,11 @@ cases:
           shift: [-60, -20, 0] # default = [0, 0, 0]
           rotate: [0, 0, 0] # default = [0, 0, 0]
           operation: add # | subtract | intersect
+
+    pcbplate:
+        - what: outline
+          name: pcbcombo
+          extrude: 2
+          shift: [-60, -20, 0]
+          rotate: [0, 0, 0]
+          operation: add

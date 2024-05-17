@@ -192,11 +192,81 @@ outlines:
       where:
       - ref: thumbs_near_thumb
         shift: [28.829,-10.533]
+
+  # pcb side outline (areas of micro controller & RJ45)
+  pcb-side:
+    - what: polygon
+      operation: stack
+      fillet: 1
+      points:
+        - ref: matrix_inner_top
+          shift: [0.25px,0.4py]
+        - ref: matrix_inner_top
+          shift: [0.5px,0.4py]
+       # move to micro-controller
+        - ref: matrix_inner_top
+          shift: [10.3968,5.5484]
+        - ref: matrix_inner_top
+          shift: [32.014,5.5484]
+        - ref: matrix_inner_top
+          shift: [32.014,-20.1203]
+        - ref: matrix_inner_top
+          shift: [30.3892,-21.1203]
+       # merge with thumb block
+        - ref: thumbs_home_thumb
+          shift: [0.5px+1.5p,0.5py]
+       # greater padding to mitigate collision
+        - ref: thumbs_far_thumb
+          shift: [0.25px,0.5py]
+        - ref: thumbs_far_thumb
+          shift: [0.25px,-0.25py]
+        - ref: thumbs_home_thumb
+          shift: [0.5px-p,-0.25py]
+        - ref: thumbs_near_thumb
+          shift: [0.5kx,-0.25py]
+        - ref: thumbs_near_thumb
+          shift: [-0.25px,-0.25py]
+        - ref: thumbs_near_thumb
+          shift: [-0.25px,0.5ky-p]
+    # mounting holes
+    - what: circle
+      operation: subtract
+      radius: mhs
+      where:
+        - ref: matrix_inner_top
+          shift: [8.9154,-8.763]
+    - what: circle
+      operation: subtract
+      radius: mhs
+      where:
+      - ref: thumbs_near_thumb
+        shift: [4.445,10.795]
+    - what: circle
+      operation: subtract
+      radius: mhs
+      where:
+      - ref: thumbs_near_thumb
+        shift: [31.877,5.723]
+    - what: circle
+      operation: subtract
+      radius: mhs
+      where:
+      - ref: thumbs_near_thumb
+        shift: [28.829,-10.533]
+
   # Combination preview showing outline and keys
   combo:
     - name: keyplate
     - operation: subtract
       name: switches
+
+  # Combine keyplate pcb-side part
+  pcb-combo:
+    - name: keyplate
+    - operation: add
+      name: pcb-side
+
+#3D printable
 cases:
     switchplate:
         - what: outline # outline | case

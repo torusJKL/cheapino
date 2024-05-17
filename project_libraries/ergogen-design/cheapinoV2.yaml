@@ -206,16 +206,16 @@ outlines:
           shift: [0.5px,0.4py]
        # move to micro-controller
         - ref: matrix_inner_top
-          shift: [10.3968,5.5484]
+          shift: [11p,5.75p]
         - ref: matrix_inner_top
-          shift: [32.014,5.5484]
+          shift: [32.5p,5.75p]
         - ref: matrix_inner_top
-          shift: [32.014,-20.1203]
+          shift: [32.5p,-21.25p]
         - ref: matrix_inner_top
-          shift: [30.3892,-21.1203]
+          shift: [31p,-22.25p]
        # merge with thumb block
         - ref: thumbs_home_thumb
-          shift: [0.5px+1.5p,0.5py]
+          shift: [0.5px+3p,0.5py]
        # greater padding to mitigate collision
         - ref: thumbs_far_thumb
           shift: [0.25px,0.5py]
@@ -240,16 +240,16 @@ outlines:
           shift: [0.5px,0.4py]
        # move to micro-controller
         - ref: matrix_inner_top
-          shift: [10.3968,5.5484]
+          shift: [11p,5.75p]
         - ref: matrix_inner_top
-          shift: [32.014,5.5484]
+          shift: [32.5p,5.75p]
         - ref: matrix_inner_top
-          shift: [32.014,-20.1203]
+          shift: [32.5p,-21.25p]
         - ref: matrix_inner_top
-          shift: [30.3892,-21.1203]
+          shift: [31p,-22.25p]
        # merge with thumb block
         - ref: thumbs_home_thumb
-          shift: [0.5px+1.5p,0.5py]
+          shift: [0.5px+3p,0.5py]
        # greater padding to mitigate collision
         - ref: thumbs_far_thumb
           shift: [0.25px,0.5py]
